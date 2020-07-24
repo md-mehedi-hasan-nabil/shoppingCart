@@ -5,8 +5,6 @@ const btn4 = document.getElementById("btn4");
 const box1 = document.getElementById("box1");
 const box2 = document.getElementById("box2");
 const subtotal = document.getElementById("subtotal");
-const total = document.getElementById("total");
-const tax = document.getElementById("tax");
 
 function minus(id, price) {
     let result = parseFloat(document.getElementById(id).value);
@@ -17,15 +15,13 @@ function minus(id, price) {
             document.getElementById('price1').innerText = 1219 * result;
             a = 1219 * result;
             b = parseFloat(document.getElementById('price2').innerText);
-            c = 0.5 * result;
-            sum(a, b, c);
+            sum(a, b);
         }
         if (price == "price2") {
             document.getElementById('price2').innerText = 59 * result;
             a = parseFloat(document.getElementById('price1').innerText);
             b = 59 * result;
-            c = 0.5 * result;
-            sum(a, b, c);
+            sum(a, b);
         }
     }
 }
@@ -39,26 +35,22 @@ function plus(id, price) {
             document.getElementById('price1').innerText = 1219 * result;
             a = 1219 * result;
             b = parseFloat(document.getElementById('price2').innerText);
-            c = 0.5 * result;
-            sum(a, b, c);
+            sum(a, b);
         }
         if (price == "price2") {
             document.getElementById('price2').innerText = 59 * result;
             a = parseFloat(document.getElementById('price1').innerText);
-            c = 0.5 * result;
             b = 59 * result;
-            sum(a, b, c);
+            sum(a, b);
         }
     }
 }
 
-function sum(a, b, c) {
+function sum(a, b) {
     let sum = 0;
     sum = a + b;
-    let x = c;
     subtotal.innerText = sum;
-    tax.innerText = x;
-    total.innerText = sum + x;
+    total.innerText = sum;
 }
 
 btn1.addEventListener("click", () => {
